@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { Loading } from 'components/isLoading';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { selectVisibleContacts } from 'redux/selectors';
+import { selectAuthenticated } from 'redux/authSelectors';
 
 export const ContactList = () => {
 
@@ -14,12 +15,14 @@ export const ContactList = () => {
   const isLoading = useSelector(selectisLoading)
   const error = useSelector(selectError)
   const contacts = useSelector(selectVisibleContacts)
+  const authenticated = useSelector(selectAuthenticated)
 
-  useEffect(()=>{
-    dispatch(fetchContacts());
-}, [dispatch])
-
-
+  useEffect(() => {
+    if (authenticated === true) {
+      dispatch(fetchContacts());
+    }
+  }, [dispatch, authenticated]);
+  
   const handleDeleteContacts = contactId => {
     dispatch(deleteContact(contactId))
   };

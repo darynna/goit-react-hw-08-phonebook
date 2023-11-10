@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { requestAddContacts, requestContacts, requestDeleteContacts } from "service/API";
+// import { requestAddContacts, requestContacts, requestDeleteContacts } ;
+import { requestAddContact, requestContacts, requestDeleteContact } from "service/phonebookAPI";
 const phonebookInitialState = {
   contacts: {
     items: [],
@@ -28,7 +29,7 @@ export const addContact = createAsyncThunk(
   "contacts/addContact",
   async (newContact, thunkAPI) => {
     try {
-      const contact = await requestAddContacts(newContact);
+      const contact = await requestAddContact(newContact);
 
       return contact;
     } catch (error) {
@@ -43,7 +44,7 @@ export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
   async (contactId, thunkAPI) => {
     try {
-      const product = await requestDeleteContacts(contactId);
+      const product = await requestDeleteContact(contactId);
       return product;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

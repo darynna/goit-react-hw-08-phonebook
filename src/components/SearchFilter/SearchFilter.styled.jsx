@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 export const FilterInput = styled.input`
 width: 130px;
-height: 20px;
+height: 24px;
 border: none;
-border-radius: 10px
+border-radius: 3px
 `
 
 export const FilterLable = styled.label`
@@ -14,3 +14,4 @@ gap: 10px;
 font-size: 20px;
 justify-content: center;
 `
+

@@ -16,25 +16,26 @@ font-size: 20px
 
 export const Input = styled.input`
 width: 130px;
-height: 20px;
+height: 24px;
 border: none;
-border-radius: 10px
+border-radius: 3px
 
 `
 
 export const AddButton = styled.button`
-padding: 12.5px 30px;
-font-size: 18px;
-border: 0;
-border-radius: 100px;
-background-color: #c89cec;
-color: #ffffff;
-font-weight: Bold;
+width: 140px;
+padding: 4px;
+background: #513568;
+color: #fff;
+border: none;
+border-radius: 3px;
+cursor: pointer;
 transition: all 0.5s;
 -webkit-transition: all 0.5s;
 
 &:hover{
-    background-color: #513568;
+  background: #321e42;
+  color: #c89cec
   box-shadow: 0 0 20px #6fc5ff50;
   transform: scale(1.1);
 }

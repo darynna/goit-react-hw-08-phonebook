@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import { selectAuthenticated } from 'redux/authSelectors';
 import logo from 'images/logo/logo.png'
-import { StyledLink, StyledNavLink, } from './Navigator';
+import { StyledLink, StyledNavLink, } from './Navigation.styled';
 
 export function Navigation() {
 

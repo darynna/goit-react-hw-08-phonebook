@@ -4,7 +4,8 @@ export const FilterInput = styled.input`
 width: 130px;
 height: 24px;
 border: none;
-border-radius: 3px
+border-radius: 3px;
+font-size: 16px
 `
 
 export const FilterLable = styled.label`

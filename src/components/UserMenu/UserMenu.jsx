@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux"
 import { logOutThunk } from "redux/authReducer"
+import { Box, LogOutButton } from "./UserMenu.styled"
 
 export const UserMenu = ({user})=>{
     const dispatch = useDispatch()
-    return <div>
+    return <Box>
     <p>Hello, {user.name}</p>
-    <button onClick={()=> dispatch(logOutThunk())}>Logout</button>
-  </div>
+    <LogOutButton onClick={()=> dispatch(logOutThunk())}>Log out</LogOutButton>
+  </Box>
 }

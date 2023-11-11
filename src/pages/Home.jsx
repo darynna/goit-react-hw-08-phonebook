@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import logo from 'images/logo/logo.png'
 import { HeartContainer, Wrapper } from './Home.styled';
 
-export const Home = () =>{
+const Home = () =>{
     return (
         <Wrapper>
           <h1 className="tracking-in-expand-fwd">Welcome to your Phone book!</h1>
@@ -17,3 +17,5 @@ export const Home = () =>{
         </Wrapper>
       );
 }
+
+export default Home

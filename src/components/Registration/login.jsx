@@ -2,12 +2,12 @@ import React from "react";
 import { useForm } from "react-hook-form"
 import { useDispatch } from "react-redux";
 import { loginThunk } from "redux/authReducer";
-import { Button, ErrorMessage, Form, FormContainer, Input, Label } from "./registartion.styled";
+import { Button, ErrorMessage, Form, FormContainer, Input, Label , Title} from "./registartion.styled";
 
 
 
 
-export const LoginPage = () =>{
+const LoginPage = () =>{
    
         const {
           register,
@@ -19,7 +19,6 @@ export const LoginPage = () =>{
 
 
         const onSubmit = (data) => {
-            console.log(data);
             dispatch(loginThunk(data))
             reset()}
       
@@ -28,6 +27,7 @@ export const LoginPage = () =>{
           
           <FormContainer>
       <Form onSubmit={handleSubmit(onSubmit)}>
+      <Title>Please Log in to access the PhoneBook</Title>
         <Label>
           <span>Email: </span>
           <Input {...register("email", { required: true })} type="email" />
@@ -39,9 +39,11 @@ export const LoginPage = () =>{
           {errors.exampleRequired && <ErrorMessage>This field is required</ErrorMessage>}
         </Label>
 
-        <Button type="submit">Sign up</Button>
+        <Button type="submit">Log in</Button>
       </Form>
     </FormContainer>
         )
       
 }
+
+export default LoginPage

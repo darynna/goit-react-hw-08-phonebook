@@ -4,7 +4,7 @@ import { Filter } from 'components/SearchFilter/SearchFilter';
 import { MainWrap } from './Contacts.styled';
 
 
-export const ContactsPage = ()=>{
+const ContactsPage = ()=>{
     return(
 <MainWrap>
         <h1>Phonebook</h1>
@@ -16,3 +16,4 @@ export const ContactsPage = ()=>{
       </MainWrap>
     )
 }
+export default ContactsPage

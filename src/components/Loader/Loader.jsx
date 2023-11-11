@@ -1,20 +1,23 @@
-import React from 'react';
-import { ColorRing } from 'react-loader-spinner';
+import { RotatingLines } from "react-loader-spinner"
 
-const Loader = () => {
-  return (
-    <div>
-      <ColorRing
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="blocks-loading"
-        wrapperStyle={{}}
-        wrapperClass="blocks-wrapper"
-        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-      />
-    </div>
-  );
-};
+const Loader = ()=>{
+    return (
+        <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <RotatingLines
+          strokeColor="purple"
+          strokeWidth={5}
+          animationDuration={0.75}
+          width={52}
+          visible={true}
+        />
+      </div>
+    )
+}
 
-export default Loader;
+export default Loader

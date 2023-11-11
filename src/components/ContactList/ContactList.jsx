@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact, fetchContacts} from 'redux/reducer';
 import {  selectError, selectisLoading } from 'redux/selectors';
 import { useEffect } from 'react';
-import { Loading } from 'components/isLoading';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { selectVisibleContacts } from 'redux/selectors';
 import { selectAuthenticated } from 'redux/authSelectors';
+import Loader from 'components/Loader/Loader';
 
 export const ContactList = () => {
 
@@ -30,7 +30,7 @@ export const ContactList = () => {
   return (
 
 <>
-    {isLoading && <Loading/>}
+    {isLoading && <Loader/>}
     {error && Notify.failure('Sorry, something went wrong!')}
 
     <ContactsList>

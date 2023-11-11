@@ -2,11 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form"
 import { useDispatch } from "react-redux";
 import { registerThunk } from "redux/authReducer";
-import { Button, ErrorMessage, Form, FormContainer, Input, Label } from "./registartion.styled";
+import { Button, ErrorMessage, Form, FormContainer, Input, Label, Title } from "./registartion.styled";
 
 
 
-export const RegisterPage = () =>{
+const RegisterPage = () =>{
    
         const {
           register,
@@ -18,7 +18,6 @@ export const RegisterPage = () =>{
 
 
         const onSubmit = (data) => {
-            console.log(data);
             dispatch(registerThunk(data))
             reset()}
       
@@ -27,6 +26,7 @@ export const RegisterPage = () =>{
           
           <FormContainer>
       <Form onSubmit={handleSubmit(onSubmit)}>
+        <Title>Please register to access the PhoneBook</Title>
         <Label>
           <span>Email: </span>
           <Input {...register("email", { required: true })} type="email" />
@@ -49,3 +49,5 @@ export const RegisterPage = () =>{
         )
       
 }
+
+export default RegisterPage

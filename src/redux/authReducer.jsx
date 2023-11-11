@@ -6,8 +6,7 @@ export const loginThunk = createAsyncThunk(
   async (formDate, thunkAPI) => {
     try {
       const response = await requestLogin(formDate);
-      console.log(response)
-      return response; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
+      return response; 
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -19,8 +18,7 @@ export const registerThunk = createAsyncThunk(
     async (formDate, thunkAPI) => {
       try {
         const response = await requestRegister(formDate);
-        console.log(response)
-        return response; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
+        return response; 
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
       }
@@ -32,14 +30,11 @@ export const registerThunk = createAsyncThunk(
     async (_, thunkAPI) => {
       const state = thunkAPI.getState()
       const token = state.auth.token
-      console.log(token)
-      console.log('hello')
       
       try {
         setToken(token)
         const response = await requestCurrent();
-        console.log(response)
-        return response; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
+        return response; 
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
       }
@@ -58,7 +53,7 @@ export const registerThunk = createAsyncThunk(
     async (_, thunkAPI) => {
       try {
         const response = await requestLogout();
-        return response; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
+        return response; 
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
       }

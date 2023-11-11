@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Title = styled.h2`
+text-align: center;
+`
+
 export const FormContainer = styled.div`
   display: flex;
   justify-content: center;
